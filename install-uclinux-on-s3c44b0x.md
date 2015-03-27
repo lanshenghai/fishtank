@@ -47,5 +47,21 @@
 
  > sudo ./build-uclinux-tools.sh continue
 
+用于定位问题（编译debug版本）：
+
+ > sudo CFLAGS=-g ./build-uclinux-tools.sh build
+ > sudo CFLAGS=-g ./build-uclinux-tools.sh continue
+
+修复编译错误：
+
+1. gcc-2.95.3/gcc/config/arm/arm.c:531
+    注释掉:
+
+    > //arm_prog_mode = TARGET_APCS_32 ? PROG_MODE_PROG32 : PROG_MODE_PROG26;
+
+1. gcc-2.95.3/gcc/collect2.c:1172
+    添加一个参数
+
+     > redir_handle = open (redir, O_WRONLY | O_TRUNC | O_CREAT, S_IRWXU);
 
 
