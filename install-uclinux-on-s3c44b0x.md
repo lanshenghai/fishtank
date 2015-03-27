@@ -39,6 +39,13 @@
 
 编译 
 ====
+第一次：
+
+ > sudo ./build-uclinux-tools.sh build
+
+出错以后继续：
+
+ > sudo ./build-uclinux-tools.sh continue
 
 
 
