@@ -2,3 +2,43 @@
 
 
 > Written with [StackEdit](https://stackedit.io/).
+
+下载相关软件包
+==============
+将下载的所有东西，放到文件夹m68k-elf-tools_tools-20030314中  
+
+下载下面这个目录里面所有的文件：
+ http://www.uclinux.org/pub/uClinux/arm-elf-tools/tools-20030314/
+
+下载linux kernel的patch文件：
+ http://www.uclinux.org/pub/uClinux/uClinux-2.4.x/uClinux-2.4.32-uc0.diff.gz
+     
+下载linux kernel：
+到网上任意找2.4.32 kernel
+
+     
+解压
+====
+1. 解压linux kernel
+
+ > tar -jxvf linux-2.4.32.tar.bz2
+
+1. 解压kernel patch
+
+ >gunzip uClinux-2.4.32-uc0.diff.gz
+
+1. patch:
+
+ >cd linux-2.4.32
+ >patch -p1 < ../uClinux-2.4.32-uc0.diff
+ >cd ..
+
+1. 解压uClibc-20030314.tar.gz
+
+ >tar -zxvf uClibc-20030314.tar.gz
+
+编译 
+====
+
+
+
