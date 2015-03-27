@@ -64,4 +64,27 @@
 
      > redir_handle = open (redir, O_WRONLY | O_TRUNC | O_CREAT, S_IRWXU);
 
+1. uClibc/libc/sysdeps/linux/arm/ioperm.c:50
+    添加头文件
+    
+     > \#include "linux/input.h"
+     
+修复代码错误：
 
+1. gcc-2.95.3/texinfo/makeinfo/makeinfo.c:1686
+
+     from 
+ 
+      >    if (!cr_or_whitespace (string[x]))
+            {
+               strcpy (string, string + x);
+               break;
+            }
+     
+     to
+     
+      >  if (!cr_or_whitespace (string[x]))
+            {
+               memmove (string, string + x, len - x + 1);
+               break;
+            }
