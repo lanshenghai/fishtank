@@ -16,6 +16,8 @@
 下载linux kernel：
 到网上任意找2.4.32 kernel
 
+下载elf2flt: 
+git clone git://wh0rd.org/elf2flt.git
      
 解压
 ====
@@ -50,6 +52,7 @@
 用于定位问题（编译debug版本）：
 
  > sudo CFLAGS=-g ./build-uclinux-tools.sh build
+ > 
  > sudo CFLAGS=-g ./build-uclinux-tools.sh continue
 
 修复编译错误：
